@@ -7,7 +7,7 @@ import Svg, {
     Path,
 } from "react-native-svg"
 const SvgComponent = (props: SvgProps) => (
-    <Svg xmlns="http://www.w3.org/2000/svg" width={430} height={932} {...props}>
+    <Svg width={430} height={932} {...props}>
         <Defs>
             <LinearGradient
                 id="a"

@@ -1,74 +1,166 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import React from "react";
+import { SectionList, View, ListRenderItemInfo, FlatList } from "react-native";
+import styled from "styled-components/native";
+import { Ionicons } from "@expo/vector-icons";
+import Label from "@/components/Label";
+import LabelBold from "@/components/LabelBold";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+const Container = styled.SafeAreaView`
+  flex: 1;
+  background-color: #fff;
+`;
 
-export default function HomeScreen() {
-  return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
+const Header = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+`;
+
+const Title = styled(LabelBold)`
+  font-size: 24px;
+  color: #000;
+`;
+
+const AdminInfo = styled.View`
+  justify-content: flex-end;
+  flex-direction: row;
+  padding-right: 20px;
+`;
+
+const AdminText = styled(Label)`
+  font-size: 16px;
+  color: #888;
+  margin-right: 5px;
+`;
+
+const SectionContent = styled.View`
+  width:100%;
+  background-color:#fff;
+  justify-content:center;
+  padding:20px;
+`
+const SectionTitle = styled(Label)`
+  font-size: 18px;
+  color: #000;
+`;
+
+const OrderCard = styled.View<{ backgroundColor: string }>`
+  width: 88px;
+  height:88px;
+  background-color: ${({ backgroundColor }: { backgroundColor: string }) => backgroundColor || "#fff"};
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  margin-bottom: 10px;
+`;
+
+const OrderText = styled(Label)`
+  font-size: 32px;
+  font-weight: 500;
+  color: #fff;
+`;
+
+const FloatingButton = styled.TouchableOpacity`
+  position: absolute;
+  bottom: 80px;
+  right: 20px;
+  left:20px;
+  width: 60px;
+  height: 60px;
+  background-color: #000;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+  elevation: 5;
+`;
+
+const ordersByMe = [
+  { id: "1", number: "9", backgroundColor: "#5B9878" },
+  { id: "2", number: "12", backgroundColor: "#5B9878" },
+  { id: "3", number: "15", backgroundColor: "#d4af4a" },
+  { id: "4", number: "22", backgroundColor: "#5B9878" },
+];
+
+
+const allOrders = [
+  ...ordersByMe,
+  { id: "5", number: "23", backgroundColor: "#5B9878" },
+  { id: "6", number: "25", backgroundColor: "#d4af4a" },
+  { id: "7", number: "31", backgroundColor: "#5B9878" },
+  { id: "8", number: "33", backgroundColor: "#d4af4a" },
+  { id: "9", number: "34", backgroundColor: "#5B9878" },
+  { id: "10", number: "35", backgroundColor: "#5B9878" },
+  { id: "11", number: "40", backgroundColor: "#5B9878" },
+];
+
+const Order: React.FC = () => {
+
+  const renderOrderItem = ({ item }: ListRenderItemInfo<typeof ordersByMe[0]>) => (
+
+    <OrderCard backgroundColor={item.backgroundColor} >
+      <OrderText>{item.number}</OrderText>
+    </OrderCard >
   );
-}
+  const fillEmptySpaces = (data: typeof ordersByMe, numColumns: number) => {
+    const numberOfFullRows = Math.floor(data.length / numColumns);
+    let numberOfElementsLastRow = data.length - numberOfFullRows * numColumns;
+    while (numberOfElementsLastRow !== numColumns && numberOfElementsLastRow !== 0) {
+      data.push({ id: `empty-${numberOfElementsLastRow}`, number: '', backgroundColor: 'transparent' });
+      numberOfElementsLastRow++;
+    }
+    return data;
+  };
 
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
+  const renderOrderRow = ({ item }: { item: typeof ordersByMe }) => {
+    const filledData = fillEmptySpaces(item, 4);
+
+    return (<FlatList
+      data={filledData}
+      renderItem={renderOrderItem}
+      numColumns={4}
+      keyExtractor={item => item.id}
+      columnWrapperStyle={{
+        justifyContent: "space-between",
+        paddingHorizontal: 20,
+        flex: 1,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+      }}
+    />
+    );
+  }
+
+
+  const sections = [
+    { title: `Abertos por mim (${ordersByMe.length})`, data: [ordersByMe] },
+    { title: `Todos (${allOrders.length})`, data: [allOrders] },
+  ];
+
+  return (
+    <Container>
+      <AdminInfo>
+        <AdminText>admin</AdminText>
+        <Ionicons name="person-circle-outline" size={24} color="#888" />
+      </AdminInfo>
+      <Header>
+        <Title>Pedidos Abertos</Title>
+      </Header>
+      <SectionList
+        sections={sections}
+        keyExtractor={(item, index) => String(index)}
+        renderItem={renderOrderRow}
+        renderSectionHeader={({ section: { title } }) => (
+          <SectionContent><SectionTitle>{title}</SectionTitle></SectionContent>
+        )}
+        contentContainerStyle={{ paddingBottom: 100 }}
+      />
+      <FloatingButton>
+        <Ionicons name="add" size={32} color="#fff" />
+      </FloatingButton>
+    </Container>
+  );
+};
+
+export default Order;
