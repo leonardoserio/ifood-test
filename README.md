@@ -1,50 +1,82 @@
-# Welcome to your Expo app 👋
+# Teste para Vaga no iFood
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este projeto foi desenvolvido como parte de um teste técnico para uma vaga na equipe do iFood. Ele demonstra minhas habilidades no desenvolvimento de aplicativos utilizando o framework Expo.
 
-## Get started
+## 🛠️ Configuração do Projeto
 
-1. Install dependencies
+Siga os passos abaixo para instalar e rodar o projeto:
 
-   ```bash
-   npm install
-   ```
+### 1️⃣ Pré-requisitos
 
-2. Start the app
+Certifique-se de ter instalado em sua máquina:
 
-   ```bash
-    npx expo start
-   ```
+- **Node.js** (versão 14 ou superior)
+- **npm** ou **yarn**
+- **Expo CLI** (opcional, mas recomendado)
 
-In the output, you'll find options to open the app in a
+### 2️⃣ Clonando o Repositório
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+Faça o clone do repositório para sua máquina local:
 
 ```bash
+git clone <URL_DO_REPOSITORIO>
+cd <NOME_DO_PROJETO>
+3️⃣ Instalando as Dependências
+No diretório do projeto, execute:
+
+bash
+Copiar código
+npm install
+ou, se preferir:
+
+bash
+Copiar código
+yarn install
+4️⃣ Iniciando o Projeto
+Para iniciar o servidor do Expo, rode:
+
+bash
+Copiar código
+npx expo start
+ou:
+
+bash
+Copiar código
+yarn start
+5️⃣ Rodando o App no Celular com Expo Go
+Android: Escaneie o QR Code com o aplicativo Expo Go (disponível na Play Store).
+iOS: Escaneie o QR Code com a câmera do seu dispositivo ou use o aplicativo Expo Go (disponível na App Store).
+Após isso, o app será carregado diretamente no dispositivo.
+
+📂 Estrutura do Projeto
+A estrutura segue o padrão do Expo Router, com suporte a rotas baseadas em arquivos. Os arquivos principais estão localizados na pasta app/. Você pode começar a desenvolver alterando ou adicionando arquivos dentro dessa pasta.
+
+🎥 Demonstração do Aplicativo
+Nota: Aqui você pode inserir GIFs ou vídeos curtos para mostrar o funcionamento do app.
+
+Exemplo de GIF 1
+
+
+Exemplo de GIF 2
+
+
+🔄 Resetando o Projeto
+Se precisar começar do zero, você pode resetar o projeto com o comando:
+
+bash
+Copiar código
 npm run reset-project
+Isso irá mover o código atual para a pasta app-example/ e criar um diretório vazio app/ para iniciar um novo desenvolvimento.
+
+📖 Referências
+Confira mais sobre o desenvolvimento com Expo nas documentações oficiais:
+
+Documentação do Expo
+Guia de Rotas com Expo Router
+🤝 Comunidade
+Participe da comunidade de desenvolvedores Expo:
+
+Repositório no GitHub
+Comunidade no Discord
+Se tiver dúvidas ou sugestões sobre o projeto, fique à vontade para entrar em contato! 😊
 ```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
