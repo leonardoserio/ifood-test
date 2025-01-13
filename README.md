@@ -1,6 +1,7 @@
 # Teste para Vaga no iFood
 
 Este projeto foi desenvolvido como parte de um teste técnico para uma vaga na equipe do iFood. Ele demonstra minhas habilidades no desenvolvimento de aplicativos utilizando o framework Expo.
+Vídeos em alta qualidade: https://drive.google.com/drive/folders/1WW7IsIdvz0AssAzLWjS1LJqEyc4uxJ2W?usp=sharing
 <p align="center">
   <img src="./examples/app-iphone.gif" alt="Demonstração do Aplicativo Android" width="300">
   <img src="./examples/app-android.gif" alt="Demonstração do Aplicativo Android" width="300">
