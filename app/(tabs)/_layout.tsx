@@ -32,7 +32,7 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="de"
+        name="history"
         options={{
           title: 'Histórico',
           tabBarIcon: ({ color }) => <HistoryIcon color={color} />,
