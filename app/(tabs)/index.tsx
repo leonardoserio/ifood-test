@@ -4,24 +4,25 @@ import { Ionicons } from "@expo/vector-icons";
 import UserCircle from "@/assets/svg/UserCircle";
 import { router } from "expo-router";
 import { AdminInfo, AdminText, Container, FloatingButton, FooterContent, Header, OrderCard, OrderText, SectionContent, SectionTitle, Title } from "./index.styles";
+import { Colors } from "@/constants/Colors";
 
 const ordersByMe = [
-  { id: "1", number: "9", backgroundColor: "#5B9878" },
-  { id: "2", number: "12", backgroundColor: "#5B9878" },
-  { id: "3", number: "15", backgroundColor: "#d4af4a" },
-  { id: "4", number: "22", backgroundColor: "#5B9878" },
+  { id: "1", number: "9", backgroundColor: Colors.green },
+  { id: "2", number: "12", backgroundColor: Colors.green },
+  { id: "3", number: "15", backgroundColor: Colors.gold },
+  { id: "4", number: "22", backgroundColor: Colors.green },
 ];
 
 
 const allOrders = [
   ...ordersByMe,
-  { id: "5", number: "23", backgroundColor: "#5B9878" },
-  { id: "6", number: "25", backgroundColor: "#d4af4a" },
-  { id: "7", number: "31", backgroundColor: "#5B9878" },
-  { id: "8", number: "33", backgroundColor: "#d4af4a" },
-  { id: "9", number: "34", backgroundColor: "#5B9878" },
-  { id: "10", number: "35", backgroundColor: "#5B9878" },
-  { id: "11", number: "40", backgroundColor: "#5B9878" },
+  { id: "5", number: "23", backgroundColor: Colors.green },
+  { id: "6", number: "25", backgroundColor: Colors.gold },
+  { id: "7", number: "31", backgroundColor: Colors.green },
+  { id: "8", number: "33", backgroundColor: Colors.gold },
+  { id: "9", number: "34", backgroundColor: Colors.green },
+  { id: "10", number: "35", backgroundColor: Colors.green },
+  { id: "11", number: "40", backgroundColor: Colors.green },
 ];
 
 const Order: React.FC = () => {
@@ -88,7 +89,7 @@ const Order: React.FC = () => {
       />
       <FooterContent>
         <FloatingButton>
-          <Ionicons name="add" size={32} color="#fff" />
+          <Ionicons name="add" size={50} color={Colors.white} />
         </FloatingButton>
       </FooterContent>
 

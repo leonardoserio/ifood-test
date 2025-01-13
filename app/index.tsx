@@ -19,6 +19,7 @@ import DividerLine from '@/components/DividerLine';
 import AnimatedLogo from '@/components/AnimatedLogo';
 import StyledAnimatedLinearGradient from '@/components/AnimatedLinearGradient';
 import Button from '@/components/Button';
+import { Colors } from '@/constants/Colors';
 const { height, width } = Dimensions.get('window');
 
 const AnimatedWelcome: React.FC = () => {
@@ -93,7 +94,7 @@ const AnimatedWelcome: React.FC = () => {
     const loginStyle = useAnimatedStyle(() => {
         return {
             opacity: loginFadeIn.value,
-            backgroundColor: "white"
+            backgroundColor: Colors.white
         };
     });
 
@@ -128,7 +129,7 @@ const AnimatedWelcome: React.FC = () => {
 export default AnimatedWelcome;
 const AnimatedHeader = styled(Animated.View)`
   width: ${width}px;
-  background-color: #6200ee;
+  background-color:${Colors.white};
   justify-content: center;
   align-items: center;
 `;

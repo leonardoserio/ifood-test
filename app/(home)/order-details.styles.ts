@@ -96,7 +96,7 @@ export const OrderNumber = styled(LabelBold)`
 
 export const Divider = styled.View`
                 border-bottom-width: 1px;
-                border-color: #ddd;
+                border-color: ${Colors.lightGray};
                 margin: 15px 0;
                 `;
 
@@ -104,14 +104,12 @@ export const SectionHeader = styled(Label)`
                 font-size: 17px;
                 margin-top: 16px;
                 margin-bottom: 8px;
-
                 `;
 
 export const SectionContainer = styled.View`
                 width:100%;
                 background-color:${Colors.white};
                 `
-
 
 export const ItemContainer = styled.View`
                 flex-direction: row;
@@ -150,8 +148,7 @@ export const Footer = styled.View`
                 padding: 16px;
                 background-color: ${Colors.shadowBlack};
                 border-top-width: 1px;
-                border-color: #ddd;
-                
+                border-color:${Colors.lightGray};
                 `;
 
 export const FloatingButton = styled.TouchableOpacity`
@@ -192,7 +189,6 @@ export const PayButton = styled.TouchableOpacity`
                 flex: 1;
                 background-color: ${Colors.black};
                 padding: 16px;
-                
                 border-radius: 8px;
                 justify-content: center;
                 align-items: center;
@@ -202,5 +198,5 @@ export const PayButton = styled.TouchableOpacity`
 export const PayButtonText = styled.Text`
                 font-size: 16px;
                 font-weight: bold;
-                color: #fff;
+                color: ${Colors.white};
                 `;

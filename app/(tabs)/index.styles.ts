@@ -38,7 +38,7 @@ export const AdminText = styled(Label)`
 
 export const SectionContent = styled.View`
   width:100%;
-  background-color:#fff;
+  background-color:${Colors.white};
   justify-content:center;
   padding:20px;
 `
@@ -63,12 +63,12 @@ export const OrderText = styled(LabelSemiBold)`
 `;
 
 export const FloatingButton = styled.TouchableOpacity`  
-  width: 60px;
-  height: 60px;
-  background-color: #000;
+  width: 70px;
+  height: 70px;
+  background-color: ${Colors.black};
  justify-content: center;
   align-items: center;
-  border-radius: 30px;
+  border-radius: 35px;
   elevation: 5;
 `;
 export const FooterContent = styled.View`

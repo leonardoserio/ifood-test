@@ -1,3 +1,4 @@
+import { Colors } from '@/constants/Colors';
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
@@ -14,10 +15,10 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#f0f0f0',
+        backgroundColor: Colors.white,
     },
     text: {
         fontSize: 18,
-        color: '#333',
+        color: Colors.black,
     },
 });
