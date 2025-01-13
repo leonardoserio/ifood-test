@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
-const EmptyScreen: React.FC = () => {
+export default () => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Esta é uma tela vazia</Text>
+            <Text style={styles.text}>Configurações</Text>
         </View>
     );
 };
@@ -21,5 +21,3 @@ const styles = StyleSheet.create({
         color: '#333',
     },
 });
-
-export default EmptyScreen;

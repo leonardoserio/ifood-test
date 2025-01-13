@@ -6,7 +6,7 @@ import { Colors } from '@/constants/Colors';
 const StyledLabel = styled.Text`
   font-size: 16px; 
   color: ${Colors.darkGray}; 
-  font-family: 'PoppinsBold'; 
+  font-family: 'PoppinsSemiBold'; 
 `;
 
 interface LabelProps extends TextProps {

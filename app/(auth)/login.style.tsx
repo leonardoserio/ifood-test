@@ -1,4 +1,6 @@
 import Label from "@/components/Label";
+import LabelBold from "@/components/LabelBold";
+import LabelSemiBold from "@/components/LabelSemiBold";
 import { Colors } from "@/constants/Colors";
 import styled from "styled-components/native";
 
@@ -14,7 +16,6 @@ export const Input = styled.TextInput`
   border: 1px solid ${Colors.gray};
   border-radius: 5px;
   font-size: 17px;
-  
 `;
 
 export const ButtonText = styled.Text`
@@ -30,8 +31,7 @@ export const FooterText = styled.Text`
   text-align: center;
 `;
 
-export const Title = styled(Label)`
-    font-weight: 500;
+export const Title = styled(LabelSemiBold)`
     font-size: 20px;
     margin-bottom:20px;
     line-height: 30px;
