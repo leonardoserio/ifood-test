@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/native';
 import Label from './Label';
 import { Colors } from '@/constants/Colors';
+import LabelBold from './LabelBold';
 
 const StyledInfoContainer = styled.View`
   flex-direction: row;
@@ -21,10 +22,9 @@ export const StyledLinkText = styled.Text`
   text-decoration: underline;
 `;
 
-export const Title = styled(Label)`
+export const Title = styled(LabelBold)`
   font-size: 32px;
   line-height:48px;
-  font-weight: bold;
   margin-bottom: 16px;
   margin-top:38px;
 `;

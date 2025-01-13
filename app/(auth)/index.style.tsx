@@ -36,3 +36,16 @@ export const Title = styled(LabelSemiBold)`
     margin-bottom:20px;
     line-height: 30px;
 `
+export const BrandText = styled(LabelBold)`
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'PoppinsBold';
+  color: ${Colors.white};
+  margin-top:-10px;
+
+`
+export const AnimatedHeader = styled.View`
+  width: ${({ width }: { width: number }) => width && `${width}px`};
+  justify-content: center;
+  align-items: center;
+`;

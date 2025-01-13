@@ -1,14 +1,9 @@
 import React from "react";
-import { SectionList, View, ListRenderItemInfo, FlatList, SafeAreaView, Platform } from "react-native";
-import styled from "styled-components/native";
+import { SectionList, ListRenderItemInfo, FlatList } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import Label from "@/components/Label";
-import LabelBold from "@/components/LabelBold";
-import { Colors } from "@/constants/Colors";
 import UserCircle from "@/assets/svg/UserCircle";
 import { router } from "expo-router";
-import { StatusBar } from "expo-status-bar";
-import LabelSemiBold from "@/components/LabelSemiBold";
+import { AdminInfo, AdminText, Container, FloatingButton, FooterContent, Header, OrderCard, OrderText, SectionContent, SectionTitle, Title } from "./index.styles";
 
 const ordersByMe = [
   { id: "1", number: "9", backgroundColor: "#5B9878" },
@@ -23,10 +18,6 @@ const allOrders = [
   { id: "5", number: "23", backgroundColor: "#5B9878" },
   { id: "6", number: "25", backgroundColor: "#d4af4a" },
   { id: "7", number: "31", backgroundColor: "#5B9878" },
-  { id: "8", number: "33", backgroundColor: "#d4af4a" },
-  { id: "9", number: "34", backgroundColor: "#5B9878" },
-  { id: "10", number: "35", backgroundColor: "#5B9878" },
-  { id: "11", number: "40", backgroundColor: "#5B9878" },
   { id: "8", number: "33", backgroundColor: "#d4af4a" },
   { id: "9", number: "34", backgroundColor: "#5B9878" },
   { id: "10", number: "35", backgroundColor: "#5B9878" },
@@ -106,78 +97,3 @@ const Order: React.FC = () => {
 };
 
 export default Order;
-
-const Container = styled.SafeAreaView`
-  flex: 1;
-  background-color: ${Colors.white};
-`;
-
-const Header = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-`;
-
-const Title = styled(LabelBold)`
-  font-size: 24px;
-  color: #000;
-`;
-
-const AdminInfo = styled.TouchableOpacity`
-  justify-content: flex-end;
-  margin-top:${Platform.OS === "ios" ? "0px" : "50px"};
-  flex-direction: row;
-  padding-right: 20px;
-  align-items:center;
-`;
-
-const AdminText = styled(Label)`
-  font-size: 13px;
-  color: ${Colors.darkGray};
-  margin-right: 5px;
-`;
-
-const SectionContent = styled.View`
-  width:100%;
-  background-color:#fff;
-  justify-content:center;
-  padding:20px;
-`
-const SectionTitle = styled(Label)`
-  font-size: 18px;
-  color: #000;
-`;
-
-const OrderCard = styled.TouchableOpacity<{ backgroundColor: string }>`
-  width: ${Platform.OS === "ios" ? "88px" : "80px"};
-  aspect-ratio:1;
-  background-color: ${({ backgroundColor }: { backgroundColor: string }) => backgroundColor || "#fff"};
-  justify-content: center;
-  align-items: center;
-  border-radius: 3px;
-  margin-bottom: 10px;
-`;
-
-const OrderText = styled(LabelSemiBold)`
-  font-size: 32px;
-  color: ${Colors.white};
-`;
-
-const FloatingButton = styled.TouchableOpacity`  
-  width: 60px;
-  height: 60px;
-  background-color: #000;
- justify-content: center;
-  align-items: center;
-  border-radius: 30px;
-  elevation: 5;
-`;
-const FooterContent = styled.View`
-  width:100%;
-  bottom:${Platform.OS === "ios" ? "100px" : "10px"};
-   justify-content: center;
-  align-items: center;
-  position: absolute;
-  z-index:10
-`
