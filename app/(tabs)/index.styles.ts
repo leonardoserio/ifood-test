@@ -48,7 +48,7 @@ export const SectionTitle = styled(Label)`
 `;
 
 export const OrderCard = styled.TouchableOpacity<{ backgroundColor: string }>`
-  width: ${Platform.OS === "ios" ? "88px" : "80px"};
+  width: 22%;
   aspect-ratio:1;
   background-color: ${({ backgroundColor }: { backgroundColor: string }) => backgroundColor || "#fff"};
   justify-content: center;
